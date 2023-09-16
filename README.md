@@ -22,16 +22,15 @@ Links:
 
 # Quick Start
 ## Installation
+> [!NOTE]
+> One of the prerequisites of SeamlessM4T is [fairseq2](https://github.com/facebookresearch/fairseq2) which has pre-built packages available only
+> for Linux x84-86 and Apple-silicon Mac computers. In addition it has a dependency on [libsndfile](https://github.com/libsndfile/libsndfile) which
+> might not be installed on your machine. If you experience any installation issues, please refer to its
+> [README](https://github.com/facebookresearch/fairseq2) for further instructions.
 
 ```
 pip install .
 ```
-
-A temporary extra requirement for fairseq2 is [libsndfile](https://github.com/libsndfile/libsndfile). From [Conda](https://docs.conda.io/en/latest/) environment it can be installed via:
-```
-conda install -y -c conda-forge libsndfile
-```
-At this point fairseq2 has a confirmed support only for Linux and macOS. Pre-built packages are only available for Linux (macOS is planned).
 
 ## Running inference
 
@@ -47,6 +46,16 @@ m4t_predict <input_text> t2tt <tgt_lang> --src_lang <src_lang>
 ```
 
 Please refer to the [inference README](scripts/m4t/predict) for detailed instruction on how to run inference and the list of supported languages on the source, target sides for speech, text modalities.
+
+## Running [Gradio](https://github.com/gradio-app/gradio) demo locally
+
+A demo is hosted [here](https://huggingface.co/spaces/facebook/seamless_m4t) on Hugging Face Spaces, but you can also try it locally.
+
+```bash
+cd demo
+pip install -r requirements.txt
+python app.py
+```
 
 # Libraries
 
